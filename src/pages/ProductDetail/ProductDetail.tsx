@@ -9,6 +9,7 @@ import { useAppDispatch } from '../../redux/hooks' // Import the Redux dispatch 
 import { addCart } from '../../redux/allCart'
 import { capitalizeFirstLetter } from '../../utils/utils'
 import { CircularProgress } from '@mui/material'
+import Subscribe from '../../components/Subscribe/Subscribe'
 
 function ProductDetail() {
   // Define a state variable to keep track of the quantity
@@ -191,11 +192,10 @@ function ProductDetail() {
                       to={{
                         pathname: '/paycart'
                       }}
+                      onClick={handleAddToCart}
                       className='w-full grow rounded border-main bg-main py-3 text-center font-semibold  text-white duration-300 ease-in-out hover:bg-hover '
                     >
-                      <button onClick={handleAddToCart} className='uppercase'>
-                        Buy it now
-                      </button>
+                      <button className='uppercase'>Buy it now</button>
                     </Link>
                   </div>
                 </div>
@@ -243,6 +243,7 @@ function ProductDetail() {
               </div>
             </div>
           </section>
+          <Subscribe />
         </div>
       </div>
     )
