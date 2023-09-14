@@ -63,7 +63,7 @@ export default function CartPage() {
           toast.success('Order Success')
           dispatch(paymentCart())
         } catch (error) {
-          toast.error('Payment unsuccessful.')
+          return
         }
       }
     } else {
