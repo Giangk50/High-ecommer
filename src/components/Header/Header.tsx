@@ -64,15 +64,26 @@ function Header() {
             </div>
           </Tooltip>
           {isAuthenticated ? (
-            <Tooltip title='Profile'>
-              <div className='relative'>
-                <div className='flex w-full items-center gap-1 '>
-                  <NavLink to={path.profile}>
-                    <ProfileIcon />
-                  </NavLink>
-                </div>
-              </div>
-            </Tooltip>
+            <div className='flex w-full items-center gap-0.5'>
+              <Tooltip title='Profile'>
+                <NavLink to={path.profile}>
+                  <ProfileIcon />
+                </NavLink>
+              </Tooltip>
+              <Tooltip title='Log Out'>
+                <button
+                  className='rotate-180 hover:text-hover'
+                  onClick={() => {
+                    clearLS()
+                    setTimeout(() => {
+                      setisAuthenticated(false)
+                    }, 500)
+                  }}
+                >
+                  <LogOutIcon />
+                </button>
+              </Tooltip>
+            </div>
           ) : (
             <Tooltip title='Login'>
               <div className='flex items-center gap-1 hover:text-hover'>
@@ -80,21 +91,6 @@ function Header() {
                   <LogOutIcon />
                 </NavLink>
               </div>
-            </Tooltip>
-          )}
-          {isAuthenticated && (
-            <Tooltip title='Log Out'>
-              <button
-                className='rotate-180 hover:text-hover'
-                onClick={() => {
-                  clearLS()
-                  setTimeout(() => {
-                    setisAuthenticated(false)
-                  }, 500)
-                }}
-              >
-                <LogOutIcon />
-              </button>
             </Tooltip>
           )}
         </div>
