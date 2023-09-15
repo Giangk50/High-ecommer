@@ -23,7 +23,7 @@ function Header() {
   const { isAuthenticated, setisAuthenticated } = useContext(AppContext)
 
   return (
-    <header className='z-10 h-[100vh-24px] border-b-2 py-2 text-main shadow-md'>
+    <header className='z-10 min-h-full border-b-2 py-2 text-main shadow-md'>
       <div className='mx-auto hidden w-full max-w-[1300px] items-center justify-between gap-40 bg-white px-7 py-4 lg:visible lg:flex'>
         <div className=' bg-white text-xl font-bold '>
           <NavLink to={path.home}>High Ecommerce</NavLink>
