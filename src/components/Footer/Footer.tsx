@@ -11,7 +11,7 @@ function Footer() {
   const [isOpen_3, setIsOpen_3] = useState(false)
   const [isOpen_4, setIsOpen_4] = useState(false)
 
-  const isLg = useMediaQuery('(min-width:768px)')
+  const isMd = useMediaQuery('(min-width:768px)')
 
   return (
     <footer className='footer mb-[52px] mt-16 bg-main text-white lg:mb-0'>
@@ -33,7 +33,7 @@ function Footer() {
               </span>
             </h3>
 
-            <Collapse in={isLg || isOpen}>
+            <Collapse in={isMd || isOpen}>
               <div className='mt-2 flex gap-5'>
                 <Link className='' to={''}>
                   <svg
@@ -82,7 +82,7 @@ function Footer() {
               </span>
             </h3>
 
-            <Collapse in={isLg || isOpen_2}>
+            <Collapse in={isMd || isOpen_2}>
               <div className='md:block'>
                 <p className='text-white/50'>
                   Have a question? You may find an answer in our FAQs. But you can also contact us:
@@ -116,7 +116,7 @@ function Footer() {
                 <ChevronDownIcon />
               </span>
             </h3>
-            <Collapse in={isLg || isOpen_3}>
+            <Collapse in={isMd || isOpen_3}>
               <ul className='md:block'>
                 <Link className='block py-2 text-white/50' to={''}>
                   Help & Constact Us
@@ -162,7 +162,7 @@ function Footer() {
               </span>
             </h3>
 
-            <Collapse in={isLg || isOpen_4}>
+            <Collapse in={isMd || isOpen_4}>
               <ul className=' md:block'>
                 <Link className='block py-2 text-white/50' to={path.profile}>
                   My Account
