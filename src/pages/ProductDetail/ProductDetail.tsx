@@ -3,13 +3,14 @@ import { Link, useParams } from 'react-router-dom'
 import { useQuery } from '@tanstack/react-query'
 import { productApi } from '../../apis/productApi.api'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import ProductComponent from '../../components/ProductComponent/ProductComponent'
 import { useAppDispatch } from '../../redux/hooks' // Import the Redux dispatch function
 import { addCart } from '../../redux/allCart'
 import { capitalizeFirstLetter } from '../../utils/utils'
 import { CircularProgress } from '@mui/material'
 import Subscribe from '../../components/Subscribe/Subscribe'
+import ProductDetailTab from './ProcuctDetailTab'
 
 function ProductDetail() {
   // Define a state variable to keep track of the quantity
@@ -83,6 +84,9 @@ function ProductDetail() {
 
     // Optional: You can show a success message or trigger some other action here
   }
+  useEffect(() => {
+    window.scrollTo(0, 0) // Scroll to the top
+  }, [id])
 
   return isFetching ? (
     <div className='relative h-screen text-center'>
@@ -167,7 +171,9 @@ function ProductDetail() {
                   <div className='mb-5 mt-6 flex items-center border-b-2 border-gray-200 pb-5'>
                     <div className='flex'>
                       <span className='mr-3'>Color</span>
-                      <button className='h-6 w-6 rounded-full border-2 border-gray-300 focus:outline-none'></button>
+                      <button className='mr-2 h-6 w-6 rounded-full border-2 border-gray-300 focus:outline-none'></button>
+                      <button className='mr-2 h-6 w-6 rounded-full border-2 border-red-300 bg-red-600 focus:outline-none'></button>
+                      <button className='h-6 w-6 rounded-full border-2 border-yellow-300 bg-yellow-500 focus:outline-none'></button>
 
                       {/* Add more color buttons here */}
                     </div>
@@ -177,14 +183,14 @@ function ProductDetail() {
                     <div className='text-lg'>Quantity</div>
                     <div className='flex items-center'>
                       <button
-                        className='rounded-md bg-gray-300 px-2 py-1 text-gray-800 hover:bg-hover sm:px-3'
+                        className='w-8 rounded-md bg-gray-300 px-2 py-1 text-gray-800 hover:bg-hover sm:px-3'
                         onClick={decreaseQuantity}
                       >
                         -
                       </button>
                       <div className='mx-2'>{quantity}</div>
                       <button
-                        className='rounded-md bg-gray-300 px-2 py-1 text-gray-800 hover:bg-hover sm:px-3'
+                        className='w-8 rounded-md bg-gray-300 px-2 py-1 text-gray-800 hover:bg-hover sm:px-3'
                         onClick={increaseQuantity}
                       >
                         +
@@ -222,20 +228,8 @@ function ProductDetail() {
           </section>
 
           <section className='body-font overflow-hidden bg-white text-gray-700'>
-            <div className='container mx-auto flex max-w-5xl flex-col items-center justify-center px-5 pb-16  '>
-              <h2 className='border-gray-200pb-5 title-font  mt-6  pb-5  text-center text-3xl  font-semibold text-gray-900'>
-                Description
-              </h2>
-              <p className='text-justify indent-3'>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt vero, nihil placeat nesciunt quas tempore
-                quia incidunt debitis officiis, minima harum? Ducimus, reprehenderit facilis! Ex a debitis molestiae
-                aperiam modi reiciendis numquam! Est itaque iusto molestiae eveniet praesentium vel, quisquam
-                consectetur officia fugit, at maxime animi voluptas minima corrupti laboriosam qui vitae ducimus labore
-                molestias natus id excepturi repudiandae ipsum quos. Fugit repudiandae quaerat suscipit nostrum soluta
-                aspernatur fugiat adipisci similique harum expedita, recusandae ipsam earum! Ipsum fugit quisquam amet a
-                aliquid distinctio beatae ea maxime tempora, alias aspernatur rerum id eligendi animi, doloremque non
-                accusamus optio ipsam? Error, ad!
-              </p>
+            <div className='container mx-auto flex max-w-5xl flex-col items-center justify-center px-5 pb-8  '>
+              <ProductDetailTab />
             </div>
           </section>
 
@@ -245,6 +239,7 @@ function ProductDetail() {
               <h2 className='border-gray-200pb-5 title-font  mt-6  pb-5  text-center text-3xl  font-semibold text-gray-900'>
                 Similar Products
               </h2>
+
               <div className='py-7" mx-auto grid max-w-6xl grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 '>
                 {Array.isArray(limitedSimilarProducts) && limitedSimilarProducts.length > 0 ? (
                   limitedSimilarProducts.map((product) => (
