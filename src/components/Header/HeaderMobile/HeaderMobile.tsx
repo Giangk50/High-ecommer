@@ -28,7 +28,13 @@ const HeaderMobile = () => {
       <div>
         <SearchBar />
       </div>
-      <Drawer anchor='left' open={isOpen} onClose={() => setIsOpen(false)}>
+      <Drawer
+        anchor='left'
+        ModalProps={{ disableScrollLock: true }}
+        open={isOpen}
+        onClose={() => setIsOpen(false)}
+        className='transition-all duration-300'
+      >
         <div className='flex flex-col gap-3 py-10'>
           {NAVIGATION.map(({ key, title }) => (
             <Link
@@ -37,7 +43,7 @@ const HeaderMobile = () => {
               onClick={onChangeRoute}
               className='text-md w-[75vw] max-w-[300px] border-b px-3 py-1 font-bold capitalize hover:text-hover'
             >
-              {title}
+              <span className={`${location.pathname === path[key] ? 'text-hover' : ''}`}>{title}</span>
             </Link>
           ))}
           {isAuthenticated ? (
