@@ -101,7 +101,7 @@ const SearchBar: FC = () => {
                           key={item.id}
                           className='mx-auto grid grid-cols-4 items-center justify-center gap-3 p-3 hover:bg-slate-50'
                         >
-                          <div className='mx-auto h-[68px] w-[68px]'>
+                          <div className='mx-auto h-[64px] w-[64px]'>
                             <img
                               src={item.image}
                               alt=''
