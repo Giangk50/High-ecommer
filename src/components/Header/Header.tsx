@@ -35,7 +35,7 @@ function Header() {
               className='border-b-[2px] border-b-transparent duration-300 hover:border-b-hover hover:text-hover'
             >
               <NavLink to={path[key]} className='capitalize'>
-                {title}
+                <span className={`${location.pathname === path[key] ? 'text-hover' : ''}`}>{title}</span>
               </NavLink>
             </div>
           ))}

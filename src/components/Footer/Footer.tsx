@@ -20,7 +20,7 @@ function Footer() {
           <div className='w-full px-4 py-4 md:w-1/2 lg:w-1/3'>
             <h2 className='mb-2 text-lg font-bold'>High Ecommerce</h2>
             <p className='my-7 text-white/50'>
-              Since 2013 we have been creating industrial design, residential architecture, commercial interiors. Chase
+              Since 2023 we have been creating industrial design, residential architecture, commercial interiors. Chase
               mice attack feet but rub face on everything cepteur sint occaecat cupidatat proident.
             </p>
             <h3
@@ -33,7 +33,7 @@ function Footer() {
               </span>
             </h3>
 
-            <Collapse in={isMd || isOpen}>
+            <Collapse className='transition-all duration-300' in={isMd || isOpen}>
               <div className='mt-2 flex gap-5'>
                 <Link className='' to={''}>
                   <svg
@@ -82,7 +82,7 @@ function Footer() {
               </span>
             </h3>
 
-            <Collapse in={isMd || isOpen_2}>
+            <Collapse className='transition-all duration-300' in={isMd || isOpen_2}>
               <div className='md:block'>
                 <p className='text-white/50'>
                   Have a question? You may find an answer in our FAQs. But you can also contact us:
@@ -111,12 +111,12 @@ function Footer() {
               className='mb-2 flex cursor-pointer items-center justify-between font-bold lg:cursor-default'
               onClick={() => setIsOpen_3((value) => !value)}
             >
-              <span className='cursor-pointer'>CUSTOMER SERVICE</span>
+              <span>CUSTOMER SERVICE</span>
               <span>
                 <ChevronDownIcon />
               </span>
             </h3>
-            <Collapse in={isMd || isOpen_3}>
+            <Collapse className='transition-all duration-300' in={isMd || isOpen_3}>
               <ul className='md:block'>
                 <Link className='block py-2 text-white/50' to={''}>
                   Help & Contact Us
@@ -156,13 +156,13 @@ function Footer() {
               className='lg: mb-2 flex cursor-pointer items-center justify-between font-bold'
               onClick={() => setIsOpen_4((value) => !value)}
             >
-              <span className='cursor-pointer'>ABOUT HIGH TEAM</span>
+              <span>ABOUT HIGH TEAM</span>
               <span>
                 <ChevronDownIcon />
               </span>
             </h3>
 
-            <Collapse in={isMd || isOpen_4}>
+            <Collapse className='transition-all duration-300' in={isMd || isOpen_4}>
               <ul className=' md:block'>
                 <Link className='block py-2 text-white/50' to={path.profile}>
                   My Account
