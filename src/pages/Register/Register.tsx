@@ -74,13 +74,14 @@ function Register() {
 
   return (
     <div
-      className='h-full overflow-y-scroll bg-cover bg-no-repeat md:h-screen md:py-20'
+      className='overflow-y-auto bg-cover bg-no-repeat md:h-screen md:py-20'
       style={{
         backgroundImage: 'url(https://chichchoedesign.com/wp-content/uploads/2022/12/thiet-ke-shop-quan-ao-nu.jpg)'
       }}
     >
-      <div className='h-full w-full bg-white p-8 md:m-auto md:h-max md:max-w-2xl md:rounded-xl md:shadow-box-1'>
-        <h1 className='pb-5 text-center text-xl uppercase'>Register an account</h1>
+      <div className='h-full w-full bg-white p-8 text-center md:m-auto md:h-max md:max-w-2xl md:rounded-xl md:shadow-box-1'>
+        <h1 className='my-3 text-3xl font-bold text-main'>High Ecommerce</h1>
+        <h2 className='mb-12'>Register an account</h2>
         <form action='' className='flex flex-col ' onSubmit={handleSubmit(handleRegister)}>
           <TextField
             label='UserName'
