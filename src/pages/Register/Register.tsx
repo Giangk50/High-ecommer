@@ -58,17 +58,17 @@ function Register() {
           id: Math.random()
         })
         if (responsive.status === 200) {
-          toast.success('Registration successful.')
+          toast.success('Register successful.')
           navigate(path.login)
         } else {
-          toast.error('Registration failed.')
+          toast.error('Register failed.')
         }
       } catch (error) {
         console.log(error)
         setDebounce(false)
       }
     } else {
-      toast.error('The account name already exists.')
+      toast.error('The account username already exists.')
     }
   }
 
