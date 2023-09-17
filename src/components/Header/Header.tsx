@@ -40,7 +40,7 @@ function Header() {
             </div>
           ))}
         </div>
-        <div className='items-center justify-items-end gap-3 lg:flex'>
+        <div className='items-center justify-items-end gap-4 lg:flex'>
           <SearchBar />
 
           <Tooltip title='Shopping Cart'>

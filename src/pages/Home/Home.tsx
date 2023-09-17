@@ -60,7 +60,7 @@ function Home() {
             }}
           />
           <div className='absolute left-28 top-1/3 text-left'>
-            <h3 className='mb-5 flex w-fit items-center border bg-hover px-3 py-2 text-white hover:border hover:border-hover hover:bg-white hover:text-hover'>
+            <h3 className='mb-5 flex w-fit cursor-pointer items-center border bg-hover px-3 py-2 text-white hover:border hover:border-hover hover:bg-white hover:text-hover'>
               SALE UP TO 50%
             </h3>
             <p className='mb-5 text-[36px] font-bold lg:text-[44px]'>Elegant Oxford Blazer</p>
