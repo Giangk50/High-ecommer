@@ -150,9 +150,12 @@ function Login() {
               {isLoggingIn ? 'Logging in...' : 'Log in'}
             </button>
 
-            <NavLink to={path.register} className='mt-4 pr-2 text-right underline hover:text-hover '>
-              Go to Register
-            </NavLink>
+            <div className='mt-2 text-center'>
+              <span className='opacity-60'>Have you already created an account?</span>{' '}
+              <NavLink to={path.register} className='mt-4 pr-2 text-right underline hover:text-hover '>
+                Go to Register
+              </NavLink>
+            </div>
           </form>
         </div>
       </div>
