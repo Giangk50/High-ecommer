@@ -45,7 +45,9 @@ function Header() {
 
           <Tooltip title='Shopping Cart'>
             <div
-              className='flex cursor-pointer items-center gap-0.5 hover:text-hover'
+              className={`flex cursor-pointer items-center gap-0.5 ${
+                location.pathname === path.paycart ? 'text-hover' : ''
+              }`}
               onClick={() => navigate(path.paycart)}
             >
               <CartIcon />
@@ -56,7 +58,9 @@ function Header() {
           </Tooltip>
           <Tooltip title='Wish List'>
             <div
-              className='flex cursor-pointer items-center gap-0.5 hover:text-hover'
+              className={`flex cursor-pointer items-center gap-0.5 ${
+                location.pathname === path.wishList ? 'text-hover' : ''
+              }`}
               onClick={() => navigate(path.wishList)}
             >
               <HeartIcon />
@@ -66,9 +70,11 @@ function Header() {
           {isAuthenticated ? (
             <div className='flex w-full items-center gap-0.5'>
               <Tooltip title='Profile'>
-                <NavLink to={path.profile}>
-                  <ProfileIcon />
-                </NavLink>
+                <div className={`${location.pathname === path.profile ? 'text-hover' : ''}`}>
+                  <NavLink to={path.profile}>
+                    <ProfileIcon />
+                  </NavLink>
+                </div>
               </Tooltip>
               <Tooltip title='Log Out'>
                 <button
