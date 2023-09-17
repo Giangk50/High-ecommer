@@ -99,7 +99,7 @@ const SearchBar: FC = () => {
                         <Link
                           to={`/products/${item.category}/${item.id}`}
                           key={item.id}
-                          className='grid grid-cols-4 items-center gap-1 px-2 py-3 hover:bg-slate-300'
+                          className='grid grid-cols-4 items-center justify-center px-1 py-3 hover:bg-slate-300'
                         >
                           <div
                             style={{
@@ -107,8 +107,9 @@ const SearchBar: FC = () => {
                               backgroundSize: 'cover',
                               backgroundPosition: 'center'
                             }}
-                            className='m-0 h-[60px] w-[60px] justify-center p-0'
+                            className='mx-auto h-[60px] w-[60px] p-0'
                           />
+
                           <p className='col-span-3 h-16 overflow-y-hidden text-left text-[16px] text-lg font-medium'>
                             {item.title}
                           </p>

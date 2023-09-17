@@ -70,8 +70,7 @@ export default function CartPage() {
             dispatch(paymentCart())
           }
         } catch (error) {
-          toast.error('Payment unsuccessful.')
-          setLoading(false)
+          return
         }
       }
     } else {

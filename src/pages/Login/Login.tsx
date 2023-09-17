@@ -13,8 +13,8 @@ import Cookies from 'js-cookie'
 
 function Login() {
   const { setisAuthenticated, setUserId } = useContext(AppContext)
-  const [username, setUsername] = useState('')
-  const [password, setPassword] = useState('')
+  const [username, setUsername] = useState('johnd')
+  const [password, setPassword] = useState('m38rmF$')
   const [loginError, setLoginError] = useState('')
   const [showPassword, setShowPassword] = useState<boolean>(false)
   const [isLoggingIn, setIsLoggingIn] = useState(false) // Add a state for login status
@@ -91,21 +91,14 @@ function Login() {
 
   return (
     <div
-      className=' h-screen w-screen bg-cover bg-no-repeat pt-32'
+      className=' h-screen bg-cover bg-no-repeat pt-32'
       style={{
         backgroundImage: 'url(https://chichchoedesign.com/wp-content/uploads/2022/12/thiet-ke-shop-quan-ao-nu.jpg)'
       }}
     >
       <div className='m-auto w-5/6 rounded-xl bg-white px-8 pb-8 pt-16 shadow-box-1 md:w-1/2 lg:w-1/3 xl:w-1/4 '>
         <div className='mb-12 flex flex-col items-center  '>
-          <div
-            style={{
-              backgroundImage: 'url(https://ohey-demo.myshopify.com/cdn/shop/files/logo_130x@2x.png?v=1630570943)',
-              backgroundRepeat: 'no-repeat',
-              height: '40px',
-              width: '100px'
-            }}
-          ></div>
+          <h1 className='mb-3 text-3xl font-bold text-main'>High Ecommerce</h1>
           <h2>Sign in to your account</h2>
         </div>
 

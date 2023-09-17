@@ -1,12 +1,13 @@
 import React, { FC, memo } from 'react'
 import { useAppDispatch, useAppSelector } from '../../redux/hooks'
-import { Paper, Table, TableBody, TableCell, TableHead, TableRow } from '@mui/material'
+import { Paper, Table, TableBody, TableCell, TableHead, TableRow, Tooltip } from '@mui/material'
 import { Link, useNavigate } from 'react-router-dom'
-import DeleteIcon from '../../components/Icons/DeleteIcon'
+// import DeleteIcon from '../../components/Icons/DeleteIcon'
 import { removeProductFromWishList } from '../../redux/wishList'
 import CartIcon from '../../components/Icons/CartIcon'
 import { addCart } from '../../redux/allCart'
 import { Product } from '../../types/product.type'
+import DeleteIcon from '../../components/Icons/DeleteIcon'
 
 const WishList: FC = () => {
   const dispatch = useAppDispatch()
@@ -18,7 +19,7 @@ const WishList: FC = () => {
     dispatch(removeProductFromWishList(id))
   }
 
-  const handleAddCart = (item: Product) => {
+  const handleAddTOCart = (item: Product) => {
     // console.log(item)
     const productToAdd = item && {
       id: item.id,
@@ -70,22 +71,26 @@ const WishList: FC = () => {
                       <p className='text-[20px] font-bold'>${item.price}</p>
                     </TableCell>
                     <TableCell>
-                      <button
-                        className=' inline-block hover:text-hover hover:underline'
-                        onClick={() => handleAddCart(item)}
-                      >
-                        <CartIcon />
-                      </button>
+                      <Tooltip title='Add product to cart'>
+                        <button
+                          className=' inline-block hover:text-hover hover:underline'
+                          onClick={() => handleAddTOCart(item)}
+                        >
+                          <CartIcon />
+                        </button>
+                      </Tooltip>
                     </TableCell>
                     <TableCell>
-                      <button
-                        className=' inline-block hover:text-hover hover:underline'
-                        onClick={() => {
-                          handleDelete(item.id)
-                        }}
-                      >
-                        <DeleteIcon />
-                      </button>
+                      <Tooltip title='Delete product from wish list'>
+                        <button
+                          className=' inline-block hover:text-hover hover:underline'
+                          onClick={() => {
+                            handleDelete(item.id)
+                          }}
+                        >
+                          <DeleteIcon />
+                        </button>
+                      </Tooltip>
                     </TableCell>
                   </TableRow>
                 ))}
