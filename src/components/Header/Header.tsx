@@ -20,7 +20,7 @@ function Header() {
   const navigate = useNavigate()
   const allListCart = useSelector(allCart)
   const wishList = useAppSelector((state) => state.wishList.list)
-  const { isAuthenticated } = useContext(AppContext)
+  const { isAuthenticated, setisAuthenticated } = useContext(AppContext)
 
   return (
     <header className='z-10 min-h-full border-b-2 py-2 text-main shadow-md'>
