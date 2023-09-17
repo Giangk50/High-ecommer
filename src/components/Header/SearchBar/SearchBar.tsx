@@ -24,7 +24,7 @@ const SearchBar: FC = () => {
       const keyTransform = key.trim().toLowerCase()
       setInputKey(key)
       if (dataList && dataList.length > 0 && keyTransform) {
-        const results = dataList.filter((item) => item.title.includes(keyTransform))
+        const results = dataList.filter((item) => item.title.toLocaleLowerCase().includes(keyTransform))
         setList(results)
       } else {
         setList([])

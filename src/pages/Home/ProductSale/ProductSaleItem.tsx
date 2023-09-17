@@ -22,7 +22,7 @@ const ProductSaleItem: FC<ProductSaleItemProps> = ({ data }) => {
           <p className='md:text-[20px]font-medium mb-2 pb-3 text-2xl lg:text-2xl'>{data.detail}</p>
           <Link
             to={data.link}
-            className='mx-auto w-1/2 cursor-pointer bg-main px-3 py-2 text-center font-bold hover:text-hover'
+            className='mx-auto w-1/2 cursor-pointer bg-main px-3 py-2 text-center font-bold duration-300 hover:text-hover'
           >
             Shop Now
           </Link>

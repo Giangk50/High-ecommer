@@ -64,7 +64,7 @@ function Home() {
               SALE UP TO 50%
             </h3>
             <p className='mb-5 text-[36px] font-bold lg:text-[44px]'>Elegant Oxford Blazer</p>
-            <NavLink className='flex items-center gap-4 hover:gap-8 hover:text-hover' to={path.products}>
+            <NavLink className='flex items-center gap-4 duration-300 hover:gap-8 hover:text-hover' to={path.products}>
               <p>Go Shopping</p>
               <span>
                 <ArrowRightIcon />

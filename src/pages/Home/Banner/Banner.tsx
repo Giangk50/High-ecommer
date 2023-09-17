@@ -80,7 +80,10 @@ const Banner = () => {
                 </div>
                 <p className='mb-5 text-[28px] font-bold lg:text-[40px]'>{title}</p>
                 <p className='mb-6 text-lg lg:mb-8'>{description}</p>
-                <NavLink className='flex items-center gap-4 hover:gap-8 hover:text-hover' to={path.products}>
+                <NavLink
+                  className='flex items-center gap-4 duration-300 hover:gap-8 hover:text-hover'
+                  to={path.products}
+                >
                   <p>Explore Now</p>
                   <span>
                     <ArrowRightIcon />
@@ -93,7 +96,7 @@ const Banner = () => {
       </Swiper>
       <div
         id='prev-btn'
-        className={`user-select-none absolute left-4 top-[40%] z-20 hidden cursor-pointer bg-gray-400 md:block ${
+        className={`user-select-none absolute left-4 top-[40%] z-20 hidden cursor-pointer bg-gray-300 md:block ${
           isFirstSlide ? 'opacity-20' : 'opacity-60 hover:bg-hover'
         }`}
         style={{ background: '' }}
@@ -110,7 +113,7 @@ const Banner = () => {
       </div>
       <div
         id='next-btn'
-        className={`user-select-none absolute right-4 top-[40%] z-20 hidden cursor-pointer bg-gray-400 md:block ${
+        className={`user-select-none absolute right-4 top-[40%] z-20 hidden cursor-pointer bg-gray-300 md:block ${
           isLastSlide ? 'opacity-20' : 'opacity-60 hover:bg-hover'
         }`}
         style={{ background: '' }}
