@@ -14,7 +14,7 @@ const WishList: FC = () => {
   const navigate = useNavigate()
 
   const wishList = useAppSelector((state) => state.wishList.list)
-  console.log(wishList)
+  // console.log(wishList)
   const handleDelete = (id: number) => {
     dispatch(removeProductFromWishList(id))
   }
