@@ -1,4 +1,5 @@
 import React, { FC, useEffect, useState } from 'react'
+import BackToTopIcon from '../Icons/BackToTopIcon'
 
 const BackToTop: FC = () => {
   const [isVisible, setIsVisible] = useState(false)
@@ -24,20 +25,12 @@ const BackToTop: FC = () => {
 
   return (
     <div
-      className={`fixed bottom-20 right-4 rounded-full bg-gray-500 p-2 transition-opacity duration-300 ${
-        isVisible ? 'opacity-100' : 'opacity-0 hover:bg-hover'
+      className={`fixed bottom-20 right-4 rounded-full bg-main p-2 transition-opacity duration-300 hover:bg-hover ${
+        isVisible ? 'opacity-100' : 'opacity-0'
       } z-50 cursor-pointer lg:bottom-4`}
       onClick={scrollToTop}
     >
-      <svg
-        xmlns='http://www.w3.org/2000/svg'
-        className='h-6 w-6 text-white'
-        fill='none'
-        viewBox='0 0 24 24'
-        stroke='currentColor'
-      >
-        <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M5 10l7-7m0 0l7 7m-7-7v18' />
-      </svg>
+      <BackToTopIcon />
     </div>
   )
 }

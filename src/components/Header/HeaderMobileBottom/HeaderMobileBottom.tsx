@@ -1,4 +1,5 @@
 import React, { FC } from 'react'
+import { useLocation } from 'react-router-dom'
 import HomeIcon from '../../Icons/HomeIcon'
 import ProductIcon from '../../Icons/ProductIcon'
 import CartIcon from '../../Icons/CartIcon'
@@ -31,11 +32,17 @@ const NAVIGATIONS: { icon: JSX.Element; link: string }[] = [
 ]
 
 const HeaderMobileBottom: FC = () => {
+  const location = useLocation()
+
   return (
     <header className='fixed bottom-0 left-0 right-0 z-50 flex justify-around rounded-t-[20px] rounded-tr-[20px] bg-white px-[10px] shadow-[0_0_12px_#0000001f] lg:hidden'>
       {NAVIGATIONS.map((item) => (
-        <Link className='px-9 py-6 hover:bg-slate-100 hover:text-hover' key={item.link} to={item.link}>
-          {item.icon}
+        <Link
+          className={`px-9 py-6 hover:bg-slate-100 hover:text-hover ${location.pathname === item.link ? 'active' : ''}`}
+          key={item.link}
+          to={item.link}
+        >
+          <span className={`${location.pathname === item.link ? 'text-hover' : 'text-main'}`}>{item.icon}</span>
         </Link>
       ))}
     </header>

@@ -110,7 +110,7 @@ const SearchBar: FC = () => {
                             className='mx-auto h-[60px] w-[60px] p-0'
                           />
 
-                          <p className='col-span-3 h-16 overflow-y-hidden text-left text-[16px] text-lg font-medium'>
+                          <p className='col-span-3 line-clamp-2 text-left text-[16px] text-lg font-medium'>
                             {item.title}
                           </p>
                         </Link>
