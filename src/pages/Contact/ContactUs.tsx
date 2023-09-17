@@ -94,7 +94,7 @@ function ContactUs() {
               </li>
               <li className='my-4 flex h-12 items-center gap-7 border-b border-b-gray-400 pb-3'>
                 <EmailIcon />
-                <span>highteam@example.com</span>
+                <span>HighTeam@example.com</span>
               </li>
               <li className='my-4 flex h-12 items-center gap-7 '>
                 <ClockIcon />

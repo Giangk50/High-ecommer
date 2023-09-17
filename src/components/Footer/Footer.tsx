@@ -100,7 +100,7 @@ function Footer() {
                   <h3 className='font-bold'>Email Us</h3>
                   <p className='text-white/50'>Get in touch by email</p>
                   <p className='text-sm text-white/50 underline'>
-                    <a href='mailto:example@example.com'>highteam@example.com</a>
+                    <a href='mailto:example@example.com'>HighTeam@example.com</a>
                   </p>
                 </div>
               </div>
@@ -119,7 +119,7 @@ function Footer() {
             <Collapse in={isMd || isOpen_3}>
               <ul className='md:block'>
                 <Link className='block py-2 text-white/50' to={''}>
-                  Help & Constact Us
+                  Help & Contact Us
                 </Link>
                 <Link className='block py-2 text-white/50' to={''}>
                   COVID-19 Information

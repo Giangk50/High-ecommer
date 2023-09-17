@@ -28,7 +28,7 @@ const HeaderMobile = () => {
       <div>
         <SearchBar />
       </div>
-      <Drawer anchor='left' open={isOpen} onClose={() => setIsOpen(false)}>
+      <Drawer anchor='left' ModalProps={{ disableScrollLock: true }} open={isOpen} onClose={() => setIsOpen(false)}>
         <div className='flex flex-col gap-3 py-10'>
           {NAVIGATION.map(({ key, title }) => (
             <Link
