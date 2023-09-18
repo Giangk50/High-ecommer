@@ -43,7 +43,7 @@ const Subscribe: FC = () => {
                 />
                 <button
                   className=' flex-shrink-0 cursor-pointer rounded-sm bg-main px-4 py-3 text-sm font-bold text-white duration-200 hover:bg-hover'
-                  type='button'
+                  type='submit'
                   disabled={!key.trim()}
                 >
                   Subscribe
