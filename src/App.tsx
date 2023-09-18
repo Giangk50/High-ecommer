@@ -135,7 +135,7 @@ function App() {
       {elements}
       <ToastContainer
         autoClose={1000}
-        // hideProgressBar
+        hideProgressBar
         newestOnTop={false}
         closeOnClick
         pauseOnHover={false}

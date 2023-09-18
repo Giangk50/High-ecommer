@@ -15,6 +15,8 @@ import { useAppSelector } from '../../redux/hooks'
 import LogOutIcon from '../Icons/LogOutIcon'
 import { Tooltip } from '@mui/material'
 import { clearLS } from '../../utils/auth.util'
+import Cookies from 'js-cookie'
+import { toast } from 'react-toastify'
 
 function Header() {
   const navigate = useNavigate()
@@ -81,8 +83,10 @@ function Header() {
                   className='rotate-180 hover:text-hover'
                   onClick={() => {
                     clearLS()
+                    Cookies.remove('access_token')
                     setTimeout(() => {
                       setIsAuthenticated(false)
+                      toast.info('Logout successfully')
                     }, 500)
                   }}
                 >

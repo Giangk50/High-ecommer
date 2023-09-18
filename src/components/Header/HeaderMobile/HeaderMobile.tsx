@@ -8,6 +8,8 @@ import { NAVIGATION } from '../../../constants/common.constant'
 import { AppContext } from '../../../contexts/HighApp.context'
 import LogOutIcon from '../../Icons/LogOutIcon'
 import { clearLS } from '../../../utils/auth.util'
+import { toast } from 'react-toastify'
+import Cookies from 'js-cookie'
 
 const HeaderMobile = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -54,8 +56,10 @@ const HeaderMobile = () => {
               className='text-md flex w-[75vw] max-w-[300px] cursor-pointer items-center justify-between border-b px-3 py-1 font-bold capitalize hover:text-hover'
               onClick={() => {
                 clearLS()
+                Cookies.remove('access_token')
                 setTimeout(() => {
                   setIsAuthenticated(false)
+                  toast.info('Logout successfully')
                   onChangeRoute()
                 }, 500)
               }}

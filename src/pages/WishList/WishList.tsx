@@ -121,7 +121,6 @@ const WishList: FC = () => {
           </button>
         </div>
       )}
-      )
     </>
   )
 }
