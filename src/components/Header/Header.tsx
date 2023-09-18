@@ -20,7 +20,7 @@ function Header() {
   const navigate = useNavigate()
   const allListCart = useSelector(allCart)
   const wishList = useAppSelector((state) => state.wishList.list)
-  const { isAuthenticated, setisAuthenticated } = useContext(AppContext)
+  const { isAuthenticated, setIsAuthenticated: setIsAuthenticated } = useContext(AppContext)
 
   return (
     <header className='z-10 min-h-full border-b-2 py-2 text-main shadow-md'>
@@ -58,7 +58,7 @@ function Header() {
           </Tooltip>
           <Tooltip title='Wish List'>
             <div
-              className={`flex cursor-pointer items-center gap-0.5 ${
+              className={`flex cursor-pointer items-center gap-0.5 hover:text-hover ${
                 location.pathname === path.wishList ? 'text-hover' : ''
               }`}
               onClick={() => navigate(path.wishList)}
@@ -82,7 +82,7 @@ function Header() {
                   onClick={() => {
                     clearLS()
                     setTimeout(() => {
-                      setisAuthenticated(false)
+                      setIsAuthenticated(false)
                     }, 500)
                   }}
                 >

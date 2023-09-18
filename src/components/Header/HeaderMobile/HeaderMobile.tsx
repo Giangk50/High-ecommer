@@ -11,7 +11,7 @@ import { clearLS } from '../../../utils/auth.util'
 
 const HeaderMobile = () => {
   const [isOpen, setIsOpen] = useState(false)
-  const { isAuthenticated, setisAuthenticated } = useContext(AppContext)
+  const { isAuthenticated, setIsAuthenticated: setIsAuthenticated } = useContext(AppContext)
 
   const onChangeRoute = () => {
     setIsOpen(false)
@@ -52,7 +52,7 @@ const HeaderMobile = () => {
               onClick={() => {
                 clearLS()
                 setTimeout(() => {
-                  setisAuthenticated(false)
+                  setIsAuthenticated(false)
                   onChangeRoute()
                 }, 500)
               }}

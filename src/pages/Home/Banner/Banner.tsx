@@ -60,7 +60,7 @@ const Banner = () => {
         }}
         pagination={pagination}
         onSlideChange={handleSlideChange}
-        autoplay={{ disableOnInteraction: true, delay: 3000 }}
+        autoplay={{ disableOnInteraction: true, delay: 4000 }}
       >
         {BANNERS.map(({ url, title, description, discount }, index) => (
           <SwiperSlide key={index.toString()}>
@@ -75,8 +75,8 @@ const Banner = () => {
               }}
             >
               <div className=' top-20% absolute text-left md:left-32'>
-                <div className='mb-5 flex w-fit items-center border bg-hover px-3 py-2 text-white hover:border hover:border-hover hover:bg-white hover:text-hover'>
-                  <h3 className='cursor-pointer hover:text-hover'>SALE UP TO {discount}%</h3>
+                <div className='mb-5 flex w-fit cursor-pointer items-center rounded-sm border bg-hover px-3 py-2 text-white duration-300 hover:border hover:border-hover hover:bg-white hover:text-hover'>
+                  <h3 className=' hover:text-hover'>SALE UP TO {discount}%</h3>
                 </div>
                 <p className='mb-5 text-[28px] font-bold lg:text-[40px]'>{title}</p>
                 <p className='mb-6 text-lg lg:mb-8'>{description}</p>

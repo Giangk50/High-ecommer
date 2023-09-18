@@ -12,7 +12,7 @@ import { setProfileToLS } from '../../utils/auth.util'
 import Cookies from 'js-cookie'
 
 function Login() {
-  const { setisAuthenticated, setUserId } = useContext(AppContext)
+  const { setIsAuthenticated: setIsAuthenticated, setUserId } = useContext(AppContext)
   const [username, setUsername] = useState('johnd')
   const [password, setPassword] = useState('m38rmF$')
   const [loginError, setLoginError] = useState('')
@@ -69,7 +69,7 @@ function Login() {
         console.log('API Response:', response.data)
         toast.success('Login successfully!')
 
-        setisAuthenticated(true)
+        setIsAuthenticated(true)
         if (loginUser) {
           const profileData = { username, password, id: loginUser.id }
           setProfileToLS(profileData)

@@ -26,7 +26,7 @@ import { clearLS } from '../../utils/auth.util'
 // }
 
 export default function ProfileLayout({ children }: { children: React.ReactNode }) {
-  const { setisAuthenticated, userData } = useContext(AppContext)
+  const { setIsAuthenticated: setisAuthenticated, userData } = useContext(AppContext)
 
   if (!userData?.data) {
     return <div> user data is empty</div>
