@@ -91,17 +91,16 @@ function Login() {
 
   return (
     <div
-      className=' h-screen bg-cover bg-no-repeat pt-32'
+      className=' flex h-screen items-center justify-center bg-cover bg-no-repeat'
       style={{
         backgroundImage: 'url(https://chichchoedesign.com/wp-content/uploads/2022/12/thiet-ke-shop-quan-ao-nu.jpg)'
       }}
     >
-      <div className='m-auto w-5/6 rounded-xl bg-white px-8 pb-8 pt-16 shadow-box-1 md:w-1/2 lg:w-1/3 xl:w-1/4 '>
+      <div className='w-5/6 min-w-max rounded-xl bg-white px-8 pb-8 pt-16 shadow-box-1 md:w-1/2 lg:w-1/3 xl:w-1/4'>
         <div className='mb-12 flex flex-col items-center  '>
           <h1 className='mb-3 text-3xl font-bold text-main'>High Ecommerce</h1>
           <h2>Sign in to your account</h2>
         </div>
-
         <div>
           <form className='flex flex-col gap-1 ' onSubmit={handleSubmit}>
             <TextField
@@ -150,7 +149,7 @@ function Login() {
               {isLoggingIn ? 'Logging in...' : 'Log in'}
             </button>
 
-            <div className='mt-2 text-center'>
+            <div className='mt-4 text-center'>
               <p className='opacity-60'>Have you already created an account?</p>
               <NavLink to={path.register} className='mt-4 pr-2 text-right text-main underline hover:text-hover '>
                 Go to Register
