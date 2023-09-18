@@ -33,7 +33,10 @@ const HeaderMobile = () => {
         ModalProps={{ disableScrollLock: true }}
         open={isOpen}
         onClose={() => setIsOpen(false)}
-        className='transition-all duration-300'
+        transitionDuration={{
+          enter: 400,
+          exit: 300
+        }}
       >
         <div className='flex flex-col gap-3 py-10'>
           {NAVIGATION.map(({ key, title }) => (
