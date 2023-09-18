@@ -66,6 +66,7 @@ const WishList: FC = () => {
                               alt={item.title}
                               // width='100px'
                               // height='100px'
+                              style={{ mixBlendMode: 'multiply' }}
                             />
                           </div>
                         </Link>
