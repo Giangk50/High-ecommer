@@ -11,7 +11,7 @@ import { clearLS } from '../../../utils/auth.util'
 
 const HeaderMobile = () => {
   const [isOpen, setIsOpen] = useState(false)
-  const { isAuthenticated, setisAuthenticated } = useContext(AppContext)
+  const { isAuthenticated, setIsAuthenticated: setIsAuthenticated } = useContext(AppContext)
 
   const onChangeRoute = () => {
     setIsOpen(false)
@@ -33,7 +33,10 @@ const HeaderMobile = () => {
         ModalProps={{ disableScrollLock: true }}
         open={isOpen}
         onClose={() => setIsOpen(false)}
-        className='transition-all duration-300'
+        transitionDuration={{
+          enter: 400,
+          exit: 300
+        }}
       >
         <div className='flex flex-col gap-3 py-10'>
           {NAVIGATION.map(({ key, title }) => (
@@ -52,7 +55,7 @@ const HeaderMobile = () => {
               onClick={() => {
                 clearLS()
                 setTimeout(() => {
-                  setisAuthenticated(false)
+                  setIsAuthenticated(false)
                   onChangeRoute()
                 }, 500)
               }}

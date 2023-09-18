@@ -29,7 +29,7 @@ import Cookies from 'js-cookie'
 // }
 
 export default function ProfileLayout({ children }: { children: React.ReactNode }) {
-  const { setisAuthenticated, userData } = useContext(AppContext)
+  const { setIsAuthenticated: setisAuthenticated, userData } = useContext(AppContext)
 
   if (!userData?.data) {
     return (

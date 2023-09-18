@@ -53,18 +53,18 @@ function Home() {
       <section className='advertised'>
         <div className='relative overflow-hidden'>
           <div
-            className=' relative flex h-screen items-center justify-center bg-cover bg-center bg-no-repeat transition-all duration-1000 hover:scale-125'
+            className=' relative flex h-screen items-center justify-center bg-cover bg-center bg-no-repeat transition-all duration-[15000ms] hover:scale-125'
             style={{
               backgroundImage:
                 'url("https://ohey-demo.myshopify.com/cdn/shop/files/1_ad0200aa-5c69-4e02-88a6-a32072ef20b2_1080x.jpg?v=1635404887")'
             }}
           />
-          <div className='absolute left-28 top-1/3 text-left'>
-            <h3 className='mb-5 flex w-fit items-center border bg-hover px-3 py-2 text-white hover:border hover:border-hover hover:bg-white hover:text-hover'>
+          <div className='absolute left-28 top-1/3  text-left '>
+            <h3 className='mb-5 flex w-fit cursor-pointer items-center rounded-sm border bg-hover px-3 py-2 text-white duration-300 hover:border hover:border-hover hover:bg-white hover:text-hover'>
               SALE UP TO 50%
             </h3>
             <p className='mb-5 text-[36px] font-bold lg:text-[44px]'>Elegant Oxford Blazer</p>
-            <NavLink className='flex items-center gap-4 hover:gap-8 hover:text-hover' to={path.products}>
+            <NavLink className='flex items-center gap-4 duration-300 hover:gap-8 hover:text-hover' to={path.products}>
               <p>Go Shopping</p>
               <span>
                 <ArrowRightIcon />

@@ -24,7 +24,7 @@ const SearchBar: FC = () => {
       const keyTransform = key.trim().toLowerCase()
       setInputKey(key)
       if (dataList && dataList.length > 0 && keyTransform) {
-        const results = dataList.filter((item) => item.title.includes(keyTransform))
+        const results = dataList.filter((item) => item.title.toLocaleLowerCase().includes(keyTransform))
         setList(results)
       } else {
         setList([])
@@ -94,21 +94,21 @@ const SearchBar: FC = () => {
               {inputKey.length > 0 && (
                 <>
                   {list.length > 0 ? (
-                    <div className=' max-h-[calc(75vh-88px)] overflow-y-auto p-4'>
+                    <div className='max-h-[calc(75vh-88px)] overflow-y-auto'>
                       {list.map((item) => (
                         <Link
                           to={`/products/${item.category}/${item.id}`}
                           key={item.id}
-                          className='grid grid-cols-4 items-center justify-center px-1 py-3 hover:bg-slate-300'
+                          className='mx-auto grid grid-cols-4 items-center justify-center gap-3 p-3 hover:bg-slate-50'
                         >
-                          <div
-                            style={{
-                              background: `url("${item.image}")`,
-                              backgroundSize: 'cover',
-                              backgroundPosition: 'center'
-                            }}
-                            className='mx-auto h-[60px] w-[60px] p-0'
-                          />
+                          <div className='mx-auto h-[64px] w-[64px]'>
+                            <img
+                              src={item.image}
+                              alt=''
+                              className='mx-auto h-full object-cover'
+                              style={{ mixBlendMode: 'multiply' }}
+                            />
+                          </div>
 
                           <p className='col-span-3 line-clamp-2 text-left text-[16px] text-lg font-medium'>
                             {item.title}
