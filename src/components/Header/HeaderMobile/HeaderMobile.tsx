@@ -8,10 +8,12 @@ import { NAVIGATION } from '../../../constants/common.constant'
 import { AppContext } from '../../../contexts/HighApp.context'
 import LogOutIcon from '../../Icons/LogOutIcon'
 import { clearLS } from '../../../utils/auth.util'
+import { toast } from 'react-toastify'
+import Cookies from 'js-cookie'
 
 const HeaderMobile = () => {
   const [isOpen, setIsOpen] = useState(false)
-  const { isAuthenticated, setisAuthenticated } = useContext(AppContext)
+  const { isAuthenticated, setIsAuthenticated: setIsAuthenticated } = useContext(AppContext)
 
   const onChangeRoute = () => {
     setIsOpen(false)
@@ -33,7 +35,10 @@ const HeaderMobile = () => {
         ModalProps={{ disableScrollLock: true }}
         open={isOpen}
         onClose={() => setIsOpen(false)}
-        className='transition-all duration-300'
+        transitionDuration={{
+          enter: 400,
+          exit: 300
+        }}
       >
         <div className='flex flex-col gap-3 py-10'>
           {NAVIGATION.map(({ key, title }) => (
@@ -51,8 +56,10 @@ const HeaderMobile = () => {
               className='text-md flex w-[75vw] max-w-[300px] cursor-pointer items-center justify-between border-b px-3 py-1 font-bold capitalize hover:text-hover'
               onClick={() => {
                 clearLS()
+                Cookies.remove('access_token')
                 setTimeout(() => {
-                  setisAuthenticated(false)
+                  setIsAuthenticated(false)
+                  toast.info('Logout successfully')
                   onChangeRoute()
                 }, 500)
               }}

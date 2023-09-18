@@ -4,6 +4,7 @@ import { AppContext } from '../../contexts/HighApp.context'
 import { clearLS } from '../../utils/auth.util'
 import { CircularProgress } from '@mui/material'
 import Cookies from 'js-cookie'
+import { toast } from 'react-toastify'
 
 // const user = {
 //   address: {
@@ -29,7 +30,7 @@ import Cookies from 'js-cookie'
 // }
 
 export default function ProfileLayout({ children }: { children: React.ReactNode }) {
-  const { setisAuthenticated, userData } = useContext(AppContext)
+  const { setIsAuthenticated: setisAuthenticated, userData } = useContext(AppContext)
 
   if (!userData?.data) {
     return (
@@ -113,9 +114,10 @@ export default function ProfileLayout({ children }: { children: React.ReactNode 
                 }
               }}
               onClick={() => {
-                setisAuthenticated(false)
                 clearLS()
                 Cookies.remove('access_token')
+                toast.info('Logout successfully')
+                setisAuthenticated(false)
               }}
             >
               <svg

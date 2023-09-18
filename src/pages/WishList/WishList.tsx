@@ -59,13 +59,11 @@ const WishList: FC = () => {
                     <TableCell>
                       <div className='flex items-center gap-6 py-5'>
                         <Link to={`/products/${item.category}/${item.id}`}>
-                          <div className=' relative h-[100px] w-[100px] p-3'>
+                          <div className='relative h-[100px] w-[100px] p-3'>
                             <img
-                              className='absolute left-1/2 top-1/2 h-full  -translate-x-1/2 -translate-y-1/2 object-cover py-2'
+                              className='absolute left-1/2 top-1/2 h-full -translate-x-1/2 -translate-y-1/2 object-cover py-2'
                               src={item.image}
                               alt={item.title}
-                              // width='100px'
-                              // height='100px'
                               style={{ mixBlendMode: 'multiply' }}
                             />
                           </div>

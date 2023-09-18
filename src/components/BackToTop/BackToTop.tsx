@@ -10,10 +10,16 @@ const BackToTop: FC = () => {
   }
 
   const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    })
+    const scrollStep = -window.scrollY / (500 / 15)
+
+    const scrollAnimation = () => {
+      if (window.scrollY !== 0) {
+        window.scrollBy(0, scrollStep)
+        requestAnimationFrame(scrollAnimation)
+      }
+    }
+
+    requestAnimationFrame(scrollAnimation)
   }
 
   useEffect(() => {
